@@ -5,7 +5,7 @@ WDA integration into [Node-RED](https://nodered.org/). WDA (WAGO device acceess)
 
 ## Usage
 
-[![node-red-wda](https://img.youtube.com/vi/TMcexCac0Zk/0.jpg)](https://www.youtube.com/watch?v=TMcexCac0Zk)
+[![node-red-wda](doc/node-red-wda.png)](https://www.youtube.com/watch?v=TMcexCac0Zk)
 
 ## Create Package
 
