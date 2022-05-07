@@ -1,0 +1,50 @@
+<script type="text/javascript">
+    RED.nodes.registerType('wda-read',{
+        category: 'WDA',
+        paletteLabel: 'wda-read',
+        color: '#6ec800',
+        defaults: {
+            name: {value:""},
+            endpoint: {value: '', type: 'wda-endpoint', required: true },
+            device: { value: 0, validate:RED.validators.number()},
+            collection: { value: 0, validate:RED.validators.number()},
+            parameter: { value: "Identity/OrderNumber", required: true }
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name || "wda-read";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="wda-read">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-endpoint"><i class="fa fa-user-circle"></i> Endpoint</label>
+        <input id="node-input-endpoint" />
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-device"><i class="fa fa-tag"></i> Device</label>
+        <input type="text" id="node-input-device" placeholder="Device">
+    </div>
+    <div class="form-row">
+        <label for="node-input-collection"><i class="fa fa-tag"></i> Collection</label>
+        <input type="text" id="node-input-collection" placeholder="Collection">
+    </div>
+    <div class="form-row">
+        <label for="node-input-parameter"><i class="fa fa-tag"></i> Parameter</label>
+        <input type="text" id="node-input-parameter" placeholder="Parameter">
+    </div>
+
+</script>
+
+<script type="text/html" data-help-name="wda-read">
+    <p>Reads a value via WAGO Device Access API</p>
+</script>

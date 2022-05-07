@@ -1,0 +1,33 @@
+{
+  "name": "@falk-werner/node-red-wda",
+  "version": "0.0.1",
+  "description": "WAGO Device Access (Proof of Concept)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Falk Werner",
+  "license": "MIT",
+  "keywords": [
+    "node-red",
+    "wago",
+    "wda"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/falk-werner/node-red-wda.git"
+  },
+  "bugs": {
+    "url": "https://github.com/falk-werner/node-red-wda/issues"
+  },
+  "homepage": "https://github.com/falk-werner/node-red-wda",
+  "directories": {
+    "example": "examples"
+  },
+  "node-red": {
+    "nodes": {
+      "wda-endpoint": "wda/wda-endpoint.js",
+      "wda-read": "wda/wda-read.js"
+    }
+  }
+}

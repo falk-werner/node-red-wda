@@ -1,0 +1,97 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e78b6cdee010a875",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "Trigger",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hello",
+        "payloadType": "str",
+        "x": 310,
+        "y": 140,
+        "wires": [
+            [
+                "e6a01de5684f9ea3"
+            ]
+        ]
+    },
+    {
+        "id": "0295aa91238f2dbc",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "5ed5cdd62d7e9c39",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "value",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.data.attributes.value",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "e6a01de5684f9ea3",
+        "type": "wda-read",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "endpoint": "f61888ccaa90ee69",
+        "device": 0,
+        "collection": 0,
+        "parameter": "Identity/OrderNumber",
+        "x": 560,
+        "y": 160,
+        "wires": [
+            [
+                "0295aa91238f2dbc",
+                "5ed5cdd62d7e9c39"
+            ]
+        ]
+    },
+    {
+        "id": "f61888ccaa90ee69",
+        "type": "wda-endpoint",
+        "name": "",
+        "hostname": "192.168.42.42",
+        "insecure": true
+    }
+]

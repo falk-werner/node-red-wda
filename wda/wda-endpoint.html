@@ -1,0 +1,46 @@
+<script type="text/javascript">
+    RED.nodes.registerType('wda-endpoint', {
+        category: 'config',
+        paletteLabel: 'wda-endpoint',
+        defaults: {
+            name: { value: '' },
+            hostname: { value: '', required: true },
+            insecure: { value: false }
+        },
+        credentials: {
+            username: { type: 'text' },
+            password: { type: 'password' }
+        },
+        label: function() {
+            return this.name || 'wda-endpoint';
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="wda-endpoint">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-hostname"><i class="fa fa-link"></i> Hostname</label>
+        <input type="text" id="node-config-input-hostname" placeholder="localhost" />
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-username"><i class="fa fa-tag"></i> Username</label>
+        <input type="text" id="node-config-input-username" placeholder="admin" />
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-password"><i class="fa fa-tag"></i> Password</label>
+        <input type="password" id="node-config-input-password" />
+    </div>
+    <div class="form-row">
+        <i class="fa fa-tag"></i>
+        <input type="checkbox" id="node-config-input-insecure" style="display: inline-block; width: auto; vertical-align: top;" />
+        <label style="width: auto;" for="node-config-input-insecure">Disable certiface check (not recommended)</label>
+    </div>
+</script>
+
+<script type="text/html" data-help-name="wda-endpoint">
+    <p>WDA Endpoint</p>
+</script>

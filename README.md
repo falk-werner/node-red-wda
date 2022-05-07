@@ -1,2 +1,3 @@
 # node-red-wda
-node-re-wda
+
+    npm pack
